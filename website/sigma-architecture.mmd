@@ -1,0 +1,75 @@
+graph TB
+    subgraph HIKER["Hiker - Wearable Watch Unit"]
+        direction TB
+        MCU_W["Seeed XIAO ESP32-C6"]
+        GPS["GPS Module"]
+        HR["Heart Rate Monitor"]
+        SPO2["SpO2 Sensor"]
+        TEMP["Temperature Sensor"]
+        HUM["Humidity Sensor"]
+        IMU["IMU"]
+        CLK["RTC"]
+        OLED["OLED Display"]
+        NRF_TX["NRF24L01+ Transmitter"]
+
+        GPS --> MCU_W
+        HR --> MCU_W
+        SPO2 --> MCU_W
+        TEMP --> MCU_W
+        HUM --> MCU_W
+        IMU --> MCU_W
+        CLK --> MCU_W
+        OLED --> MCU_W
+        MCU_W --> NRF_TX
+    end
+
+    subgraph GS["Ground Station"]
+        direction TB
+        NRF_RX["NRF24L01+ Receiver"]
+        MCU_GS["ESP32"]
+        DISPLAY["On-Site Display"]
+        SOLAR["Solar Power"]
+        GS_API["Optional HTTP uplink<br/>(when connectivity available)"]
+
+        NRF_RX --> MCU_GS
+        MCU_GS --> DISPLAY
+        SOLAR -.-> MCU_GS
+        MCU_GS <--> GS_API
+    end
+
+    subgraph DASH["S.I.G.M.A Dashboard (Web App)"]
+        direction TB
+        HEATMAP["Live Heat Map"]
+        CARDS["Hiker Status Cards"]
+        ALERTS["Alerting &<br/>Triage Views"]
+        API["API Layer"]
+
+        API --> HEATMAP
+        API --> CARDS
+        API --> ALERTS
+    end
+
+    NRF_TX ==>|"Radio - Sensor<br/>Telemetry Packets"| NRF_RX
+    MCU_GS ==>|"Data Relay"| API
+
+    subgraph DISPLAY_INFO["Ground Station Display Content"]
+        direction LR
+        NAV["Navigation & Hazards"]
+        HEALTH["Health Alerts<br/>(HR, SpO2, Heat)"]
+        CTX["Contextual<br/>Recommendations"]
+    end
+    DISPLAY --- DISPLAY_INFO
+
+    subgraph TEAM["Team Roles"]
+        direction LR
+        ROLE_WEAR["Wearable<br/>Sensors & RF"]
+        ROLE_GS["Ground Station<br/>Display & CAD"]
+        ROLE_DASH["Dashboard<br/>API & Alerts"]
+    end
+
+    subgraph STRETCH["Stretch Goals"]
+        direction LR
+        MESH["Mesh Networking<br/>Relay nodes,<br/>multi-hop routing"]
+        FAMILY["Family / Traveler App<br/>Trip planning,<br/>location sharing"]
+        VOICE["Voice Comms<br/>Mic at ground station<br/>for responder calls"]
+    end

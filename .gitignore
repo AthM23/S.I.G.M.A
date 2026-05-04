@@ -1,0 +1,26 @@
+groundstation/WIFI_CONFIG.h
+.agents/
+skills-lock.json
+
+node_modules/
+
+# Env — tracked examples stay via negation
+.env
+.env.*
+!.env.example
+
+# Vite / frontend
+dist/
+dist-ssr/
+.vite/
+
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+.DS_Store
+Thumbs.db
+
+.eslintcache
