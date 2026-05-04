@@ -449,7 +449,7 @@ export default function SettingsPage() {
         </div>
 
         <footer className="mt-12 flex flex-wrap items-center justify-between gap-2 border-t border-[#2a2119]/80 pt-6 text-[11.5px] text-stone-500">
-          <span>SIGMA — Spatial Interactive Geologging Model Application</span>
+          <span>SIGMA — Spatial Interactive Geospatial Model Application</span>
           <span>Mission control v1</span>
         </footer>
       </div>

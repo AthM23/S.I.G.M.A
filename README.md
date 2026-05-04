@@ -1,7 +1,7 @@
-# S.I.G.M.A — Spatial Interactive Geologging Model Application
+# S.I.G.M.A — Spatial Interactive Geospatial Model Application
 
 <p align="center">
-  <img src="./sigmaimagedark.png" alt="S.I.G.M.A — Geologging Intelligence & Environmental Awareness" width="420" />
+  <img src="./sigmaimagedark.png" alt="S.I.G.M.A — Geospatial Intelligence & Environmental Awareness" width="420" />
 </p>
 
 > 🏆 **1st Place + Best Design** — IEEE Tech-A-Thon 2026
@@ -275,6 +275,10 @@ lives in `website/context/GROUNDSTATION-HOTSPOT-LAN.md`.
 ## Team
 
 A three-person team built S.I.G.M.A end-to-end:
+
+- [Atharv Mungale](https://www.linkedin.com/in/atharv-mungale/)
+- [Aryan Kumar](https://www.linkedin.com/in/aryan-kumar-65abb0245/)
+- [Felipe Russo Henriques](https://www.linkedin.com/in/felipe-russo-henriques/)
 
 | Role                   | Responsibility                                                                       |
 | ---------------------- | ------------------------------------------------------------------------------------ |
