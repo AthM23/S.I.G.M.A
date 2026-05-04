@@ -1,4 +1,4 @@
-# S.I.G.M.A — Spatial Interactive Geospatial Model Application
+# S.I.G.M.A — Spatial Interactive Geologging Model Application
 
 <p align="center">
   <img src="./sigmaimagedark.png" alt="S.I.G.M.A — Geospatial Intelligence & Environmental Awareness" width="420" />
